@@ -1090,7 +1090,7 @@ h1, h2, h3, h4, h5, h6, figure {
     .text-salebox .text-rights p {
       color: #000; }
     .text-salebox .text-rights .btn-primary {
-      color: #fff; }
+      color: #000; }
     .text-salebox .text-rights .btn-outline {
       border: 1px solid #B37463 !important;
       color: #B37463; }
@@ -1973,6 +1973,7 @@ input[type="text"] {
   color: #000;
   border: 1px solid #000; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: #000;
     background: #fff !important;
     border-color: #000 !important; }
   .btn-primary.btn-outline {
