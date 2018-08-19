@@ -93,7 +93,7 @@
 		<aside id="colorlib-hero" class="breadcrumbs">
 			<div class="flexslider">
 				<ul class="slides">
-			   	<li style="background-image: url(images/cover-img-1.jpg);">
+			   	<li style="background-image: url(images/cover-img-1.jpg);" >
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -103,14 +103,14 @@
 				   					<h2 class="bread"><span><a href="home.html">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Product Detail</span></h2>
 				   				</div>
 				   			</div>
-				   		</div>
+				   		</div> <p id="gap" style="height: 20px; width: auto; padding-bottom: 100px; z-index: 999; visibility: hidden;"> Hello this is to fill space</p>
 			   		</div>
 			   	</li>
-			  	</ul>
+			  	</ul> 
 		  	</div>
 		</aside>
-
-		<div class="colorlib-shop">
+        
+		<div class="colorlib-shop"> 
 			<div class="container">
 				<div class="row row-pb-lg">
 					<div class="col-md-10 col-md-offset-1">
@@ -607,21 +607,23 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script>
 function fx(y) {
     var x = document.getElementById("changeimg");
+    var x1 = document.getElementById("gap");
     if(y==1)
         {
-            x.style.backgroundImage ="url(images/item-11.jpg)"; x.scrollIntoView();
+            x.style.backgroundImage ="url(images/item-11.jpg)"; 
         }
     else if(y==2){
-        x.style.backgroundImage ="url(images/item-12.jpg)"; x.scrollIntoView();
+        x.style.backgroundImage ="url(images/item-12.jpg)"; 
     }
     else if(y==3){
-        x.style.backgroundImage ="url(images/item-16.jpg)"; x.scrollIntoView();
+        x.style.backgroundImage ="url(images/item-16.jpg)"; 
     }
     /*if (x.style.display === "none") {
         x.style.display = "block";
     } else {
         x.style.display = "none";
     }*/
+    x1.scrollIntoView();
 }
 
 </script>
