@@ -1950,6 +1950,7 @@ input[type="text"] {
   margin-bottom: 4px;
   font-size: 18px;
   font-weight: 400;
+    /*color: #000;*/
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
@@ -1980,7 +1981,7 @@ input[type="text"] {
     border: 1px solid #B37463; }
     .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
       background: #B37463;
-      color: #000; }
+      color: #fff; }
 
 .btn-success {
   background: #5cb85c;
