@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6, figure {
     transform: scale(1.1); }
 
 #colorlib-hero {
-  height: 600px;
+  height: 650px;
   background: #fff url(../images/loader.gif) no-repeat center center;
   width: 100%;
   float: left;
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6, figure {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        height: 600px;
+        height: 650px;
         position: relative; }
         #colorlib-hero .flexslider .slides li .overlay {
           position: absolute;
