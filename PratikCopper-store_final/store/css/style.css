@@ -256,7 +256,7 @@ h1, h2, h3, h4, h5, h6, figure {
     transform: scale(1.1); }
 
 #colorlib-hero {
-  height: 600px;
+  height: 650px;
   background: #fff url(../images/loader.gif) no-repeat center center;
   width: 100%;
   float: left;
@@ -277,7 +277,7 @@ h1, h2, h3, h4, h5, h6, figure {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
-        height: 600px;
+        height: 650px;
         position: relative; }
         #colorlib-hero .flexslider .slides li .overlay {
           position: absolute;
@@ -1972,8 +1972,8 @@ input[type="text"] {
   color: #fff;
   border: 1px solid #B37463; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    background: #ffc91a !important;
-    border-color: #ffc91a !important; }
+    background: #000 !important;
+    border-color: #000 !important; }
   .btn-primary.btn-outline {
     background: transparent;
     color: #B37463;
