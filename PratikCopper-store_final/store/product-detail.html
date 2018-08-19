@@ -118,13 +118,14 @@
 							<div class="row">
 								<div class="col-md-5">
 									<div class="product-entry">
-										<div class="product-img" style="background-image: url(images/item-7.jpg);">
+										<div class="product-img" id = "changeimg" style="background-image: url(images/item-7.jpg);">
+                                            
 											<p class="tag"><span class="sale">Sale</span></p>
 										</div>
 										<div class="thumb-nail">
-											<a href="#" class="thumb-img" style="background-image: url(images/item-11.jpg);"></a>
-											<a href="#" class="thumb-img" style="background-image: url(images/item-12.jpg);"></a>
-											<a href="#" class="thumb-img" style="background-image: url(images/item-16.jpg);"></a>
+											<a href="#" class="thumb-img" style="background-image: url(images/item-11.jpg);" onclick="fx(1)"></a>
+											<a href="#" class="thumb-img" style="background-image: url(images/item-12.jpg);" onclick="fx(2)"></a>
+											<a href="#" class="thumb-img" style="background-image: url(images/item-16.jpg);" onclick="fx(3)"></a>
 										</div>
 									</div>
 								</div>
@@ -603,6 +604,27 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		    
 		});
 	</script>
+<script>
+function fx(y) {
+    var x = document.getElementById("changeimg");
+    if(y==1)
+        {
+            x.style.backgroundImage ="url(images/item-11.jpg)";
+        }
+    else if(y==2){
+        x.style.backgroundImage ="url(images/item-12.jpg)";
+    }
+    else if(y==3){
+        x.style.backgroundImage ="url(images/item-16.jpg)";
+    }
+    /*if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }*/
+}
+
+</script>
 
 	</body>
 </html>
