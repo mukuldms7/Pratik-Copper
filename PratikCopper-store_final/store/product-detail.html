@@ -53,11 +53,13 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
 
+        <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 	</head>
 	<body>
 		
-	<div class="colorlib-loader"></div>
+	<!--<div class="colorlib-loader"></div>-->
 
 	<div id="page">
 		<nav class="colorlib-nav" role="navigation">
@@ -123,9 +125,9 @@
 											<p class="tag"><span class="sale">Sale</span></p>
 										</div>
 										<div class="thumb-nail">
-											<a href="#" class="thumb-img" style="background-image: url(images/blah3.jpg);" onclick="fx(1)"></a>
-											<a href="#" class="thumb-img" style="background-image: url(images/item-17.JPG);" onclick="fx(2)"></a>
-											<a href="#" class="thumb-img" style="background-image: url(images/item-16.jpg);" onclick="fx(3)"></a>
+											<a href="#" class="thumb-img" style="background-image: url(images/blah3.jpg);" ><img src="images/blah3.jpg"></a>
+											<a href="#" class="thumb-img" style="background-image: url(images/item-17.JPG);" ><img src="images/item-17.JPG"></a>
+											<a href="#" class="thumb-img" style="background-image: url(images/item-16.jpg);" ><img src="images/item-16.jpg"></a>
 										</div>
 									</div>
 								</div>
@@ -604,29 +606,28 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		    
 		});
 	</script>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
 <script>
-function fx(y) {
-    var x = document.getElementById("changeimg");
-    var x1 = document.getElementById("gap");
-    if(y==1)
-        {
-            x.style.backgroundImage ="url(images/item-11.jpg)"; 
-        }
-    else if(y==2){
-        x.style.backgroundImage ="url(images/item-12.jpg)"; 
-    }
-    else if(y==3){
-        x.style.backgroundImage ="url(images/item-16.jpg)"; 
-    }
-    /*if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }*/
-    x1.scrollIntoView();
-}
-
-</script>
+$(document).ready(function(){
+  $('.product-entry').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: true,
+  asNavFor: '.thumb-nail'
+});
+$('.thumb-nail').slick({
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  asNavFor: '.product-entry',
+  dots: true,
+  centerMode: true,
+  focusOnSelect: true
+});
+});
+</script>		
 
 	</body>
 </html>
