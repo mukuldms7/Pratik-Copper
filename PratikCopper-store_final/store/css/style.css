@@ -588,7 +588,7 @@ h1, h2, h3, h4, h5, h6, figure {
       .product-detail-wrap .desc .price .rate i {
         color: #B37463; }
   .product-detail-wrap .desc .btn-addtocart i {
-    color: #fff;
+    color: #000;
     font-size: 20px;
     padding-right: 10px; }
 
@@ -1969,7 +1969,7 @@ input[type="text"] {
 
 .btn-primary {
   background: #B37463;
-  color: #fff;
+  color: #000;
   border: 1px solid #000; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     background: #fff !important;
@@ -1980,7 +1980,7 @@ input[type="text"] {
     border: 1px solid #B37463; }
     .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
       background: #B37463;
-      color: #fff; }
+      color: #000; }
 
 .btn-success {
   background: #5cb85c;
