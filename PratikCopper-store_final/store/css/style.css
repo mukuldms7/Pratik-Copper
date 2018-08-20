@@ -1090,7 +1090,7 @@ h1, h2, h3, h4, h5, h6, figure {
     .text-salebox .text-rights p {
       color: #000; }
     .text-salebox .text-rights .btn-primary {
-      color: #000; }
+      color: #fff; }
     .text-salebox .text-rights .btn-outline {
       border: 1px solid #B37463 !important;
       color: #B37463; }
@@ -1969,13 +1969,13 @@ input[type="text"] {
     outline: none !important; }
 
 .btn-primary {
-  background: #B37463;
+  background: #000;
   color: #000;
   border: 1px solid #000; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
     color: #000;
-    background: #fff !important;
-    border-color: #000 !important; }
+    background: #B37463 !important;
+    border-color: #B37463 !important; }
   .btn-primary.btn-outline {
     background: transparent;
     color: #B37463;
@@ -2000,18 +2000,18 @@ input[type="text"] {
       color: #fff; }
 
 .btn-info {
-  background: #5bc0de;
+  /*background: #5bc0de;*/
   color: #fff;
-  border: 2px solid #5bc0de; }
+  /*border: 2px solid #5bc0de;*/ }
   .btn-info:hover, .btn-info:focus, .btn-info:active {
     background: #46b8da !important;
-    border-color: #46b8da !important; }
+    /*border-color: #46b8da !important;*/ }
   .btn-info.btn-outline {
     background: transparent;
-    color: #5bc0de;
-    border: 2px solid #5bc0de; }
+    /*color: #5bc0de;*/
+    /*border: 2px solid #5bc0de;*/ }
     .btn-info.btn-outline:hover, .btn-info.btn-outline:focus, .btn-info.btn-outline:active {
-      background: #5bc0de;
+      /*background: #5bc0de;*/
       color: #fff; }
 
 .btn-warning {
