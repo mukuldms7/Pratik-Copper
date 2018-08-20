@@ -1969,13 +1969,13 @@ input[type="text"] {
     outline: none !important; }
 
 .btn-primary {
-  background: #000;
+  background: #B37463;
   color: #000;
   border: 1px solid #000; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    color: #000;
+    color: #fff;
     background: #B37463 !important;
-    border-color: #B37463 !important; }
+    border-color: #fff !important; }
   .btn-primary.btn-outline {
     background: transparent;
     color: #B37463;
