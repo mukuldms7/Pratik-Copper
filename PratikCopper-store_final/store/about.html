@@ -55,7 +55,7 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body onload="fx1()">
 		
 	<div class="colorlib-loader"></div>
 
@@ -114,22 +114,22 @@
 			<div class="container">
 				<div class="row">
 					<div class="about-flex">
-						<div class="col-one-forth">
+						<div class="col-one-forth" id="above">
 							<div class="row">
 								<div class="col-md-12 about">
 									<h2>About</h2>
 
 									<ul>
-										<li><a href="#">History</a></li>
-										<li><a href="#">Staff</a></li>
-										<li><a href="#">Connect with us</a></li>
-										<li><a href="#">Faqs</a></li>
-										<li><a href="#">Career</a></li>
+										<li><a href="#" onclick="fx(1)">History</a></li>
+										<li><a href="#" onclick="fx(2)">Staff</a></li>
+										<li><a href="#" onclick="fx(3)">Connect with us</a></li>
+										<li><a href="#" onclick="fx(4)">Faqs</a></li>
+										<li><a href="#" onclick="fx(5)">Career</a></li>
 									</ul>
 								</div>
 							</div>
 						</div>
-						<div class="col-three-forth">
+						<div class="col-three-forth" id="1">
 							<h2>History</h2>
 							<div class="row">
 								<div class="col-md-12">
@@ -141,20 +141,20 @@
 										</div>
 										<div class="col-md-6">
 											<p>TI was fascinated by your synopsis of the history of Riviera Industries over the past, almost halfcentury. Clearly, your company has a rich corporate heritage and tradition. At the same time, the company has been blessed with a continuum of leaders of foresight and imagination who had the courage to change course at key points along the way so that the company could remain competitive and continue to lead its industry.</p>
-											<!--<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>-->
+											<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
 										</div>
 									</div>
 
 
-									<!--<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+									<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
 
 									<p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country.</p>
 
-									<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>-->
+									<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
 								</div>
 							</div>
 						</div>
-                        <!--<div class="col-three-forth">
+                        <div class="col-three-forth" id="2">
 							<h2>Staff</h2>
 							<div class="row">
 								<div class="col-md-12">
@@ -183,7 +183,7 @@
 								</div>
 							</div>
 						</div>
-                        <div class="col-three-forth">
+                        <div class="col-three-forth" id="3">
 							<h2>Connect with us</h2>
 							<div class="row">
 								<div class="col-md-12">
@@ -212,7 +212,7 @@
 								</div>
 							</div>
 						</div>
-                        <div class="col-three-forth">
+                        <div class="col-three-forth" id="4">
 							<h2>FAQ's</h2>
 							<div class="row">
 								<div class="col-md-12">
@@ -241,7 +241,7 @@
 								</div>
 							</div>
 						</div>
-                        <div class="col-three-forth">
+                        <div class="col-three-forth" id="5">
 							<h2>Career</h2>
 							<div class="row">
 								<div class="col-md-12">
@@ -269,7 +269,7 @@
 									<p>But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their.</p>
 								</div>
 							</div>
-						</div>-->
+						</div>
                         
 					</div>
 				</div>
@@ -404,7 +404,40 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+<script>
+function fx(y) {
+    var x1 = document.getElementById("1");
+    var x2 = document.getElementById("2");
+    var x3 = document.getElementById("3");
+    var x4 = document.getElementById("4");
+    var x5 = document.getElementById("5");
+    
+    var x = document.getElementById(y);
+    if (x.style.display === "none") {
+         x1.style.display = "none";
+         x2.style.display = "none";
+         x3.style.display = "none";
+         x4.style.display = "none";
+         x5.style.display = "none";
+         x.style.display = "block";
+        
+        document.getElementById("above").scrollIntoView();
+    } 
+}
+function fx1()
+    {
+         var x1 = document.getElementById("1");
+    var x2 = document.getElementById("2");
+    var x3 = document.getElementById("3");
+    var x4 = document.getElementById("4");
+    var x5 = document.getElementById("5");
+      x1.style.display = "block";
+         x2.style.display = "none";
+         x3.style.display = "none";
+         x4.style.display = "none";
+         x5.style.display = "none";  
+    }
+</script>
 	</body>
 </html>
 
