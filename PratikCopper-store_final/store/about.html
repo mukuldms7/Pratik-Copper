@@ -109,15 +109,15 @@
 			  	</ul>
 		  	</div>
 		</aside>
-
+        
 		<div id="colorlib-about">
-			<div class="container">
+			<div class="container" >
 				<div class="row">
-					<div class="about-flex">
-						<div class="col-one-forth" id="above">
-							<div class="row">
+					<div class="about-flex" id="above">
+						<div class="col-one-forth" >
+							<div class="row"> <div id="one1" style="min-height: 20px;"></div>
 								<div class="col-md-12 about">
-									<h2>About</h2>
+									<h2 id="one">About</h2>
 
 									<ul>
 										<li><a href="#" onclick="fx(1)">History</a></li>
@@ -403,10 +403,10 @@ function fx(y) {
          x3.style.display = "none";
          x4.style.display = "none";
          x5.style.display = "none";
-         x.style.display = "block";
-        
-        document.getElementById("above").scrollIntoView();
+         x.style.display = "block";  
     } 
+    // document.getElementById("one").scrollIntoView();
+    location.hash=y;
 }
 function fx1()
     {
