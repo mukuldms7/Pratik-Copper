@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6, figure {
     margin: 0; } }
 
 .colorlib-nav .top-menu {
-  padding: 15px 30px; }
+  padding: 2px 30px; }
   @media screen and (max-width: 768px) {
     .colorlib-nav .top-menu {
       padding: 10px 1em; } }
