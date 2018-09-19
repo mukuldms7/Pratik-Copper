@@ -185,13 +185,17 @@ $var=$_GET['var'];
                                         </button>
                                     	</span>
                                  	</div>
+                                            
                         			</div>
+                                             
+                                            
 										</div> 
+                                         <h3> Price: &#x20B9; 1000.00 </h3>  
                                         <form action="test.php" method="post" name="newform"> 
-                                            <input type="hidden" name="stuff" value="100">
-                                            <input type="hidden" name="qty" value="1">
-										<p><a href="#" class="btn btn-primary btn-addtocart" id="qty"><i class="icon-shopping-cart"></i>
-                                            <button type="submit" style="background-color: transparent; border-color: transparent; cursor: default;">  Add to Cart </button></a></p>
+                                                <input type="hidden" name="price" value="100">
+                                                <input type="hidden" name="qty" value="1">
+                                                <p><a href="#" class="btn btn-primary btn-addtocart" id="qty"><i class="icon-shopping-cart"></i>
+                                                <button type="submit" style="background-color: transparent; border-color: transparent; cursor: default;">  Add to Cart </button></a></p>
                                         </form>    
 									</div>
 								</div>
