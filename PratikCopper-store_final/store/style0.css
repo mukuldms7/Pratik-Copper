@@ -1,0 +1,24 @@
+.size-wrap p.size-desc .size:hover {
+            color: #B37463; }
+
+        .btnn {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+        background-color: #fff;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    /* Style the active class, and buttons on mouse-over */
+    button.active, .btnn:hover {
+        background-color: #B37463;
+        color: white;
+    }
+    .product-detail-wrap .thumb-nail .thumb-img {
+            width: 31.9%;
+        }
+		  
+		  #quantity{
+			  min-width: 50px !important;
+		  }

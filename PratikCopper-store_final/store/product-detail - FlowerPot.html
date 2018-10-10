@@ -53,6 +53,28 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+        <style>
+     .size-wrap p.size-desc .size:hover {
+            color: #B37463; }
+
+        .btnn {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+        background-color: #fff;
+        cursor: pointer;
+        text-transform: uppercase;
+    }
+
+    /* Style the active class, and buttons on mouse-over */
+    button.active, .btnn:hover {
+        background-color: #B37463;
+        color: white;
+    }
+    .product-detail-wrap .thumb-nail .thumb-img {
+            width: 31.9%;
+        }
+    </style>
 	</head>
 	<body>
 		
@@ -71,13 +93,6 @@
 								<li><a href="home.html">Home</a></li>
 								<li class="has-dropdown active">
 									<a href="shop.html">Shop</a>
-									<!--<ul class="dropdown">
-										<li><a href="product-detail.html">Product Detail</a></li>
-										<li><a href="cart.html">Shipping Cart</a></li>
-										<li><a href="checkout.html">Checkout</a></li>
-										<li><a href="order-complete.html">Order Complete</a></li>
-										<li><a href="add-to-wishlist.html">Wishlist</a></li>
-									</ul>-->
 								</li>
 								<!--<li><a href="blog.html">Blog</a></li>-->
 								<li><a href="about.html">About</a></li>
@@ -131,18 +146,7 @@
 								<div class="col-md-7" style="width: 35%">
 									<div class="desc">
 										<h3>Flower Pot</h3>
-										<!--<p class="price">
-											<span>$68.00</span> 
-											<span class="rate text-right">
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-half"></i>
-												(74 Rating)
-											</span>
-										</p>-->
-										<!--<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>-->
+								
 										<table>
                                             <tr style="color: #B37463"><b>
                                                 <th>Sl No.</th>
@@ -163,13 +167,14 @@
                                             
                                         </table>
                                         <p></p>
-										<div class="size-wrap">
-											<p class="size-desc">
-												Size: 
-												<a href="#" class="size size-4">1</a>
-												<a href="#" class="size size-5">2</a>
-											</p>
-										</div>
+                                        <div id="size-wrap">
+                                            <p class="size-desc">
+                                            Size: 
+                                            
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn active"><div id = "txt1" >1</div></button></a>
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt2">2</div></button></a>
+                                                </p>
+                                        </div>
 										<div class="row row-pb-sm">
 											<div class="col-md-4">
                                     <div class="input-group">
@@ -187,7 +192,16 @@
                                  	</div>
                         			</div>
 										</div>
-										<p><a href="cart.html" class="btn btn-primary btn-addtocart" style="background-color: #fff;"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
+										 <!-- <h3> Price: &#x20B9; 1000.00 </h3>  -->
+                                        <form action="add.php" method="post" name="newform"> 
+                                                <input type="hidden" name="name" value="Flower Pot">
+                                                <input type="hidden" name="img" value="images/mt1.jpg">
+												<input type="hidden" name="price" value="100">
+                                                <input type="hidden" name="qty" value="1">
+                                                <input type="hidden" name="size" value="<?php $products[$n]->asize(0); ?>">
+                                                <p><a href="#" class="btn btn-primary btn-addtocart" id="qty"><i class="icon-shopping-cart"></i>
+                                                <button type="submit" style="background-color: transparent; border-color: transparent; cursor: default;">  Add to Cart </button></a></p>
+                                        </form>  
 									</div>
 								</div>
 							</div>
@@ -238,32 +252,6 @@
 							</ul>
 						</p>
 					</div>
-					<!--<div class="col-md-2 colorlib-widget">
-						<h4>Customer Care</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Returns/Exchange</a></li>
-								<li><a href="#">Gift Voucher</a></li>
-								<li><a href="#">Wishlist</a></li>
-								<li><a href="#">Special</a></li>
-								<li><a href="#">Customer Services</a></li>
-								<li><a href="#">Site maps</a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2 colorlib-widget">
-						<h4>Information</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Delivery Information</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Support</a></li>
-								<li><a href="#">Order Tracking</a></li>
-							</ul>
-						</p>
-					</div>-->
                 
                     <div class="col-md-5">
 						<h4>Contact Information</h4>
@@ -328,21 +316,18 @@
 	<script>
 		$(document).ready(function(){
 
-		var quantitiy=0;
+		var quantity=0;
 		   $('.quantity-right-plus').click(function(e){
 		        
 		        // Stop acting like a button
 		        e.preventDefault();
 		        // Get the field name
 		        var quantity = parseInt($('#quantity').val());
-		        
+		       // quantitiy=quantity;
 		        // If is not undefined
 		            
 		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
+                  document.newform.qty.value = quantity+1;
 		    });
 
 		     $('.quantity-left-minus').click(function(e){
@@ -350,16 +335,30 @@
 		        e.preventDefault();
 		        // Get the field name
 		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
 		            // Increment
 		            if(quantity>0){
 		            $('#quantity').val(quantity - 1);
+                        document.newform.qty.value = quantity-1;
 		            }
+                    else document.newform.qty.value = quantity;
 		    });
-		    
+              
 		});
+
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("size-wrap"); console.log("in the function man.. ");
+    var btns = header.getElementsByClassName("btnn"); console.log(btns.length);
+   
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = header.getElementsByClassName("active"); 
+            if (current.length > 0) { 
+                current[0].className = current[0].className.replace(" active", "");
+            }
+            this.className += " active"; var btns1 = header.getElementsByClassName("btnn active");  console.log("active = "); console.log(btns1[0].textContent); 
+            document.newform.size.value = btns1[0].textContent;
+      });
+    }
 	</script>
 <script>
 function fx(y) {
@@ -374,11 +373,7 @@ function fx(y) {
     else if(y==3){
         x.style.backgroundImage ="url(images/fp3.jpg)";
     }
-    /*if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }*/
+   
 }
 
 </script>

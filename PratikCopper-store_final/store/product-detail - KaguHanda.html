@@ -49,6 +49,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" href="style0.css">
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -131,18 +132,6 @@
 								<div class="col-md-7" style="width: 35%">
 									<div class="desc">
 										<h3>Kagu Handa</h3>
-										<!--<p class="price">
-											<span>$68.00</span> 
-											<span class="rate text-right">
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-half"></i>
-												(74 Rating)
-											</span>
-										</p>-->
-										<!--<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>-->
 										<table>
                                             <tr style="color: #B37463"><b>
                                                 <th>Sl No.</th>
@@ -167,14 +156,16 @@
                                             
                                         </table>
                                         <p></p>
-										<div class="size-wrap">
-											<p class="size-desc">
+										
+                                        <div id="size-wrap">
+												<p class="size-desc">
 												Size: 
-												<a href="#" class="size size-4">1</a>
-												<a href="#" class="size size-5">2</a>
-												<a href="#" class="size size-5">3</a>
-											</p>
-										</div>
+												
+												<a href="javascript:void(0);" class="size" ><button class="btnn active"><div id = "txt1" >1</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt2">2</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt3">3</div></button></a>
+													</p>
+											</div>
 										<div class="row row-pb-sm">
 											<div class="col-md-4">
                                     <div class="input-group">
@@ -192,7 +183,16 @@
                                  	</div>
                         			</div>
 										</div>
-										<p><a href="cart.html" class="btn btn-primary btn-addtocart" style="background-color: #fff;"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
+										<!-- <h3> Price: &#x20B9; 1000.00 </h3> --> 
+											<form action="add.php" method="post" name="newform"> 
+													<input type="hidden" name="name" value="Kagu Handa">
+                                                    <input type="hidden" name="img" value="images/kh1.jpg">
+													<input type="hidden" name="price" value="100">
+													<input type="hidden" name="qty" value="1">
+													<input type="hidden" name="size" value="1">
+													<p><a href="#" class="btn btn-primary btn-addtocart" id="qty"><i class="icon-shopping-cart"></i>
+													<button type="submit" style="background-color: transparent; border-color: transparent; cursor: default;">  Add to Cart </button></a></p>
+											</form>    
 									</div>
 								</div>
 							</div>
@@ -243,32 +243,7 @@
 							</ul>
 						</p>
 					</div>
-					<!--<div class="col-md-2 colorlib-widget">
-						<h4>Customer Care</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">Contact</a></li>
-								<li><a href="#">Returns/Exchange</a></li>
-								<li><a href="#">Gift Voucher</a></li>
-								<li><a href="#">Wishlist</a></li>
-								<li><a href="#">Special</a></li>
-								<li><a href="#">Customer Services</a></li>
-								<li><a href="#">Site maps</a></li>
-							</ul>
-						</p>
-					</div>
-					<div class="col-md-2 colorlib-widget">
-						<h4>Information</h4>
-						<p>
-							<ul class="colorlib-footer-links">
-								<li><a href="#">About us</a></li>
-								<li><a href="#">Delivery Information</a></li>
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Support</a></li>
-								<li><a href="#">Order Tracking</a></li>
-							</ul>
-						</p>
-					</div>-->
+					
                 
                     <div class="col-md-5">
 						<h4>Contact Information</h4>
@@ -330,42 +305,7 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script>
-		$(document).ready(function(){
-
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
-		    
-		});
-	</script>
+	<script src="jsfile.js"></script>
 <script>
 function fx(y) {
     var x = document.getElementById("changeimg");
@@ -379,11 +319,7 @@ function fx(y) {
     else if(y==3){
         x.style.backgroundImage ="url(images/kh3.jpg)";
     }
-    /*if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }*/
+
 }
 
 </script>

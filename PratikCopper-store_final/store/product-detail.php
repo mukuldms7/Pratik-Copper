@@ -2,7 +2,57 @@
 $var = '0';
 if(isset($_GET['var']))
 $var=$_GET['var'];
-   
+
+class product{
+    private $id;
+    private $name;
+    private $img1; private $img2; private $img3;
+    private $sizenum;
+    private $size;
+    private $sorw;
+    private $titles;
+    private $weights;
+    
+    public function  __construct($id,$name,$img1,$img2,$img3,$sizenum,$size,$sorw,$titles,$weights) {
+    $this->id = $id;
+    $this-> name = $name;
+    $this-> size = $size;
+    $this-> sizenum = $sizenum;  
+    $this-> img1 = $img1;
+    $this-> img2 = $img2;
+    $this-> img3 = $img3;
+    $this-> sorw = $sorw;
+    $this-> titles = $titles;
+    $this-> weights = $weights;
+  }
+    public function aname()
+    {        echo $this->name;     }
+     public function asizenum()
+    {        echo $this->sizenum;     }
+     public function rsizenum()
+    {        return $this->sizenum;     }
+     public function aimg1()
+    {        echo $this->img1;     }
+     public function aimg2()
+    {        echo $this->img2;     }
+     public function aimg3()
+    {        echo $this->img3;     }
+     public function aid()
+    {        echo $this->id;     }
+    public function asorw()
+    {        echo $this->sorw;     }
+     public function asize($index)
+    {        echo $this->size[$index];     } 
+     public function atitles($index)
+    {        echo $this->titles[$index];     }
+     public function aweights($index)
+    {        echo $this->weights[$index];     }
+}
+
+$aaa=array("xs","s","m","l","xl"); $alength=count($aaa);
+$prod1 = new product(1,"Ghangal","images/blah3.jpg","images/item-17.JPG","images/item-16.jpg",$alength,$aaa);
+$products = array($prod1);
+$n=$var;
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -52,13 +102,33 @@ $var=$_GET['var'];
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+    <style>
+     .size-wrap p.size-desc .size:hover {
+            color: #B37463; }
 
+        .btnn {
+        border: none;
+        outline: none;
+        padding: 10px 16px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+        font-size: 18px;
+             text-transform: uppercase;
+    }
+
+    /* Style the active class, and buttons on mouse-over */
+    button.active, .btnn:hover {
+        background-color: #B37463;
+        color: white;
+    }
+    .product-detail-wrap .thumb-nail .thumb-img {
+    
+            width: 31.9%;
+        }
+    </style>
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
+
 	</head>
 	<body>
 		
@@ -128,324 +198,65 @@ $var=$_GET['var'];
 											<p class="tag"><span class="sale">Sale</span></p>
 										</div>
 										<div class="thumb-nail">
-                                            <a href="#gap" class="thumb-img" style="background-image: url(images/blah3.jpg);" onclick="fx(1)"></a>
-                                            <a href="#gap" class="thumb-img" style="background-image: url(images/item-17.JPG);" onclick="fx(2)"></a>
-                                            <a href="#gap" class="thumb-img" style="background-image: url(images/item-16.jpg);" onclick="fx(3)"></a>
+                                            <a href="#gap" class="thumb-img" style="background-image: url(<?php $products[$n]->aimg1(); ?>);" onclick="fx(1)"></a>
+                                            <a href="#gap" class="thumb-img" style="background-image: url(<?php $products[$n]->aimg2(); ?>);" onclick="fx(2)"></a>
+                                            <a href="#gap" class="thumb-img" style="background-image: url(<?php $products[$n]->aimg3(); ?>);" onclick="fx(3)"></a>
 										</div>
 									</div>
 								</div>
 								<div class="col-md-7">
 									<div class="desc">
-										<h3>Ghangal <?php echo $var; ?></h3>
-										<!--<p class="price">
-											<span>$68.00</span> 
-											<span class="rate text-right">
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-full"></i>
-												<i class="icon-star-half"></i>
-												(74 Rating)
-											</span>
-										</p>-->
-										<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-										<!--<div class="color-wrap">
-											<p class="color-desc">
-												Color: 
-												<a href="#" class="color color-1"></a>
-												<a href="#" class="color color-2"></a>
-												<a href="#" class="color color-3"></a>
-												<a href="#" class="color color-4"></a>
-												<a href="#" class="color color-5"></a>
-											</p>
-										</div>-->
-										<div class="size-wrap">
-											<p class="size-desc">
-												Size: 
-												<a href="javascript:void(0);" class="size size-1" >xs</a>
-												<a href="javascript:void(0);" class="size size-2">s</a>
-												<a href="javascript:void(0);" class="size size-3">m</a>
-												<a href="javascript:void(0);" class="size size-4">l</a>
-												<a href="javascript:void(0);" class="size size-5">xl</a>
-												<a href="javascript:void(0);" class="size size-5">xxl</a>
-											</p>
-										</div>
+										<h3> <?php $products[$n]->aname(); ?> </h3>
+
+										<p> <?php $products[$n]->adesc(); ?> </p>
+                                        
+                                        <div id="size-wrap">
+                                            <p class="size-desc">
+                                            Size: 
+                                            <!--
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn active"><div id = "txt1" >xs</div></button></a>
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt2">s</div></button></a>
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt3">m</div></button></a>
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt4">l</div></button></a>
+                                            <a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt5">xl</div></button></a>
+                                             -->
+                                                <?php
+                                                for($i=0;$i<$products[$n]->rsizenum();$i++)
+                                                {
+                                                    if ($i==0) $x= "active"; else $x="";
+                                                    echo "<a href=\"javascript:void(0);\" class=\"size\"><button class=\"btnn ",$x, " \"><div id =\"txt",$i+1," \"> ",$products[$n]->asize($i)," </div></button></a> ";
+                                                }
+                                                ?>
+                                                </p>
+                                        </div>
+                                        
 										<div class="row row-pb-sm">
 											<div class="col-md-4">
-                                    <div class="input-group">
-                                    	<span class="input-group-btn">
-                                       	<button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
-                                          <i class="icon-minus2"></i>
-                                       	</button>
-                                   		</span>
-                                    	<input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
-                                    	<span class="input-group-btn">
-                                       	<button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-                                            <i class="icon-plus2"></i>
-                                        </button>
-                                    	</span>
-                                 	</div>
-                                            
-                        			</div>
-                                             
-                                            
-										</div> 
+                                                <div class="input-group">
+                                                    <span class="input-group-btn">
+                                                    <button type="button" class="quantity-left-minus btn"  data-type="minus" data-field="">
+                                                      <i class="icon-minus2"></i>
+                                                    </button>
+                                                    </span>
+                                                    <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                                    <span class="input-group-btn">
+                                                    <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                                        <i class="icon-plus2"></i>
+                                                    </button>
+                                                    </span>
+                                                </div>
+                        			         </div> 
+										</div> s
                                          <h3> Price: &#x20B9; 1000.00 </h3>  
-                                        <form action="test.php" method="post" name="newform"> 
+                                        <form action="add.php" method="post" name="newform"> 
                                                 <input type="hidden" name="price" value="100">
                                                 <input type="hidden" name="qty" value="1">
+                                                <input type="hidden" name="size" value="<?php $products[$n]->asize(0); ?>">
                                                 <p><a href="#" class="btn btn-primary btn-addtocart" id="qty"><i class="icon-shopping-cart"></i>
                                                 <button type="submit" style="background-color: transparent; border-color: transparent; cursor: default;">  Add to Cart </button></a></p>
                                         </form>    
 									</div>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1">
-						<div class="row">
-							<div class="col-md-12 tabulation">
-								<ul class="nav nav-tabs">
-									<li class="active"><a data-toggle="tab" href="#description">Description</a></li>
-									<li><a data-toggle="tab" href="#manufacturer">Manufacturer</a></li>
-									<li><a data-toggle="tab" href="#review">Reviews</a></li>
-								</ul>
-								<div class="tab-content">
-									<div id="description" class="tab-pane fade in active">
-										<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-										<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-										<ul>
-											<li>The Big Oxmox advised her not to do so</li>
-											<li>Because there were thousands of bad Commas</li>
-											<li>Wild Question Marks and devious Semikoli</li>
-											<li>She packed her seven versalia</li>
-											<li>tial into the belt and made herself on the way.</li>
-										</ul>
-						         </div>
-						         <div id="manufacturer" class="tab-pane fade">
-						         	<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-										<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
-								      
-								   </div>
-								   <div id="review" class="tab-pane fade">
-								   	<div class="row">
-								   		<div class="col-md-7">
-								   			<h3>23 Reviews</h3>
-								   			<div class="review">
-										   		<div class="user-img" style="background-image: url(images/person1.jpg)"></div>
-										   		<div class="desc">
-										   			<h4>
-										   				<span class="text-left">Jacob Webb</span>
-										   				<span class="text-right">14 March 2018</span>
-										   			</h4>
-										   			<p class="star">
-										   				<span>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-half"></i>
-										   					<i class="icon-star-empty"></i>
-									   					</span>
-									   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-										   			</p>
-										   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-										   		</div>
-										   	</div>
-										   	<div class="review">
-										   		<div class="user-img" style="background-image: url(images/person2.jpg)"></div>
-										   		<div class="desc">
-										   			<h4>
-										   				<span class="text-left">Jacob Webb</span>
-										   				<span class="text-right">14 March 2018</span>
-										   			</h4>
-										   			<p class="star">
-										   				<span>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-half"></i>
-										   					<i class="icon-star-empty"></i>
-									   					</span>
-									   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-										   			</p>
-										   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-										   		</div>
-										   	</div>
-										   	<div class="review">
-										   		<div class="user-img" style="background-image: url(images/person3.jpg)"></div>
-										   		<div class="desc">
-										   			<h4>
-										   				<span class="text-left">Jacob Webb</span>
-										   				<span class="text-right">14 March 2018</span>
-										   			</h4>
-										   			<p class="star">
-										   				<span>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-full"></i>
-										   					<i class="icon-star-half"></i>
-										   					<i class="icon-star-empty"></i>
-									   					</span>
-									   					<span class="text-right"><a href="#" class="reply"><i class="icon-reply"></i></a></span>
-										   			</p>
-										   			<p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrov</p>
-										   		</div>
-										   	</div>
-								   		</div>
-								   		<div class="col-md-4 col-md-push-1">
-								   			<div class="rating-wrap">
-									   			<h3>Give a Review</h3>
-									   			<p class="star">
-									   				<span>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					(98%)
-								   					</span>
-								   					<span>20 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-empty"></i>
-									   					(85%)
-								   					</span>
-								   					<span>10 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-empty"></i>
-									   					<i class="icon-star-empty"></i>
-									   					(98%)
-								   					</span>
-								   					<span>5 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-empty"></i>
-									   					<i class="icon-star-empty"></i>
-									   					<i class="icon-star-empty"></i>
-									   					(98%)
-								   					</span>
-								   					<span>0 Reviews</span>
-									   			</p>
-									   			<p class="star">
-									   				<span>
-									   					<i class="icon-star-full"></i>
-									   					<i class="icon-star-empty"></i>
-									   					<i class="icon-star-empty"></i>
-									   					<i class="icon-star-empty"></i>
-									   					<i class="icon-star-empty"></i>
-									   					(98%)
-								   					</span>
-								   					<span>0 Reviews</span>
-									   			</p>
-									   		</div>
-								   		</div>
-								   	</div>
-								   </div>
-					         </div>
-				         </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="colorlib-shop">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center colorlib-heading">
-						<h2><span>Similar Products</span></h2>
-						<p>We love to tell our successful far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-3 text-center">
-						<div class="product-entry">
-							<div class="product-img" style="background-image: url(images/item-5.jpg);">
-								<p class="tag"><span class="new">New</span></p>
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span> 
-										<span><a href="product-detail.html"><i class="icon-eye"></i></a></span> 
-										<span><a href="#"><i class="icon-heart3"></i></a></span>
-										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="shop.html">Floral Dress</a></h3>
-								<p class="price"><span>$300.00</span></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center">
-						<div class="product-entry">
-							<div class="product-img" style="background-image: url(images/item-6.jpg);">
-								<p class="tag"><span class="new">New</span></p>
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span> 
-										<span><a href="product-detail.html"><i class="icon-eye"></i></a></span> 
-										<span><a href="#"><i class="icon-heart3"></i></a></span>
-										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="shop.html">Floral Dress</a></h3>
-								<p class="price"><span>$300.00</span></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center">
-						<div class="product-entry">
-							<div class="product-img" style="background-image: url(images/item-7.jpg);">
-								<p class="tag"><span class="new">New</span></p>
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span> 
-										<span><a href="product-detail.html"><i class="icon-eye"></i></a></span> 
-										<span><a href="#"><i class="icon-heart3"></i></a></span>
-										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="shop.html">Floral Dress</a></h3>
-								<p class="price"><span>$300.00</span></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 text-center">
-						<div class="product-entry">
-							<div class="product-img" style="background-image: url(images/item-8.jpg);">
-								<p class="tag"><span class="new">New</span></p>
-								<div class="cart">
-									<p>
-										<span class="addtocart"><a href="#"><i class="icon-shopping-cart"></i></a></span> 
-										<span><a href="product-detail.html"><i class="icon-eye"></i></a></span> 
-										<span><a href="#"><i class="icon-heart3"></i></a></span>
-										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="shop.html">Floral Dress</a></h3>
-								<p class="price"><span>$300.00</span></p>
 							</div>
 						</div>
 					</div>
@@ -607,8 +418,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 		        e.preventDefault();
 		        // Get the field name
 		        var quantity = parseInt($('#quantity').val());
-		       // quantitiy=quantity;
-		        // If is not undefined
+
 		      
 		            // Increment
 		            if(quantity>0){
@@ -619,42 +429,37 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                  
 		    });
               
-		     //var x0 = document.getElementById("qty");
-            //document.getElementById("qty").href="cart.php?qty=" + quantitiy;
 		});
-	</script>
 
-<script>
 function fx(y) {
     var x = document.getElementById("changeimg");
     document.newform.qty.value = quantity;
     if(y==1)
         {
-            x.style.backgroundImage ="url(images/blah3.jpg)";
+            x.style.backgroundImage ="url(<?php $products[$n]->aimg1(); ?>)";
         }
     else if(y==2){
-        x.style.backgroundImage ="url(images/item-17.jpg)";
+        x.style.backgroundImage ="url(<?php $products[$n]->aimg2(); ?>)";
     }
     else if(y==3){
-        x.style.backgroundImage ="url(images/item-16.jpg)";
+        x.style.backgroundImage ="url(<?php $products[$n]->aimg3(); ?>)";
     }
-    /*if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }*/
 }
-
-    function new1(){
-         var x = document.getElementsByClassName("size-2");
-           /* x.style.backgroundColor="#B37463";*/
-        x.style.color="#FFF";
+    // Add active class to the current button (highlight it)
+    var header = document.getElementById("size-wrap"); console.log("in the function man.. ");
+    var btns = header.getElementsByClassName("btnn"); console.log(btns.length);
+   
+    for (var i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", function() {
+            var current = header.getElementsByClassName("active"); 
+            if (current.length > 0) { 
+                current[0].className = current[0].className.replace(" active", "");
+            }
+            this.className += " active"; var btns1 = header.getElementsByClassName("btnn active");  console.log("active = "); console.log(btns1[0].textContent); 
+            document.newform.size.value = btns1[0].textContent;
+      });
     }
 </script>
-<style>
- .size-wrap p.size-desc .size:hover {
-        color: #B37463; }
-</style>
 	</body>
 </html>
 

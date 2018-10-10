@@ -48,7 +48,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="js/modernizr-2.6.2.min.js"></script>  <link rel="stylesheet" href="style0.css">
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -181,17 +181,19 @@
                                             </tr>
                                         </table>
                                         <p></p>
-										<div class="size-wrap">
-											<p class="size-desc">
+										
+                                        <div id="size-wrap">
+												<p class="size-desc">
 												Size: 
-												<a href="#" class="size size-4">1</a>
-												<a href="#" class="size size-5">2</a>
-												<a href="#" class="size size-5">3</a>
-                                                <a href="#" class="size size-5">4</a>
-                                                <a href="#" class="size size-4">5</a>
-												<a href="#" class="size size-5">6</a>
-											</p>
-										</div>
+												
+												<a href="javascript:void(0);" class="size" ><button class="btnn active"><div id = "txt1" >1</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt2">2</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt3">3</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt4">4</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt5">5</div></button></a>
+												<a href="javascript:void(0);" class="size" ><button class="btnn"><div id = "txt6">6</div></button></a>
+													</p>
+											</div>
 										<div class="row row-pb-sm">
 											<div class="col-md-4">
                                     <div class="input-group">
@@ -209,7 +211,16 @@
                                  	</div>
                         			</div>
 										</div>
-										<p><a href="cart.html" class="btn btn-primary btn-addtocart" style="background-color: #fff;"><i class="icon-shopping-cart"></i> Add to Cart</a></p>
+										<!-- <h3> Price: &#x20B9; 1000.00 </h3> --> 
+											<form action="add.php" method="post" name="newform"> 
+													<input type="hidden" name="name" value="Navarang Kalashi">
+                                                    <input type="hidden" name="img" value="images/nk1.jpg">
+													<input type="hidden" name="price" value="100">
+													<input type="hidden" name="qty" value="1">
+													<input type="hidden" name="size" value="1">
+													<p><a href="#" class="btn btn-primary btn-addtocart" id="qty"><i class="icon-shopping-cart"></i>
+													<button type="submit" style="background-color: transparent; border-color: transparent; cursor: default;">  Add to Cart </button></a></p>
+											</form>   
 									</div>
 								</div>
 							</div>
@@ -347,42 +358,8 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script>
-		$(document).ready(function(){
+	<script src="jsfile.js"></script>
 
-		var quantitiy=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-
-		          
-		            // Increment
-		        
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		        
-		        // If is not undefined
-		      
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-		            }
-		    });
-		    
-		});
-	</script>
 <script>
 function fx(y) {
     var x = document.getElementById("changeimg");
