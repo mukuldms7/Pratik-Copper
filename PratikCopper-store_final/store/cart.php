@@ -1,3 +1,10 @@
+<?php
+include ('dbConfig.php');
+
+           $validate = "SELECT * FROM cart   ";
+                    $result2 = mysqli_query($con,$validate);
+                    
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -123,6 +130,7 @@
 						</div>
 					</div>
 				</div>
+                
 				<div class="row row-pb-md">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="product-name">
@@ -141,23 +149,25 @@
 								<span>Remove</span>
 							</div>
 						</div>
+                        <?php   foreach ($result2 as $row)
+                    {?>
 						<div class="product-cart">
 							<div class="one-forth">
-								<div class="product-img" style="background-image: url(images/item-6.jpg);">
+								<div class="product-img" style="background-image: url(<?php echo $row['image'];?>);">
 								</div>
 								<div class="display-tc">
-									<h3>Product Name</h3>
+									<h3> <?php echo $row['name'];?> </h3>
 								</div>
 							</div>
 							
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="1" min="1" max="100">
+									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="<?php echo $row['quantity']; ?> " min="1" max="100">
 								</div>
 							</div>
                             <div class="one-eight text-center">
                                 <div class="display-tc">
-									<h3>XXL</h3>
+									<h3><?php echo $row['size'];?></h3>
 								</div>
                             </div>
 							<div class="one-eight text-center">
@@ -168,8 +178,9 @@
 						</div>
 					</div>
 				</div>
+                <?php }?>
                 <center> 
-                <input type="submit" value="Apply Coupon" class="btn btn-primary">
+               <a href="checkout.html">  <input type="submit" value="Confirm cart" class="btn btn-primary"> </a>
                     </center>
 				<!--<div class="row">
 					<div class="col-md-10 col-md-offset-1">

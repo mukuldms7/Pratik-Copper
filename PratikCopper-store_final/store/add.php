@@ -11,6 +11,8 @@ echo "price = ".$var."\n";
 echo "qty = ".$_POST['qty']."\n";
 echo "size = ".$_POST['size']."\n";
 
- $insert ="Insert into cart (name,quantity,size,price,image) value ('".$name."','".$qty."','".$size."','".$var."','".$img."' )";
+	
+$insert ="Insert into cart (name,quantity,size,price,image) value ('".$name."','".$qty."','".$size."','".$var."','".$img."' )";
     $result = mysqli_query($con,$insert);
+ header("Location:home.html");
 ?>
