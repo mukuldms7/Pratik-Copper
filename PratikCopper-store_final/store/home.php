@@ -1,3 +1,15 @@
+<?php
+include ('dbConfig.php');
+session_start();
+if (!isset($_SESSION['num']))
+{
+    $validate = "DELETE FROM cart ";
+    /*$result2 = mysqli_query($con,$validate);*/
+    $_SESSION['num']= 1;  
+}
+               
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -65,11 +77,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="home.html"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
+							<div id="colorlib-logo"><a href="home.php"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li class="active"><a href="home.html">Home</a></li>
+								<li class="active"><a href="home.php">Home</a></li>
 								<li class="has-dropdown">
 									<a href="shop.html">Shop</a>
 									<!--<ul class="dropdown">
@@ -83,7 +95,7 @@
 								<!--<li><a href="blog.html">Blog</a></li>-->
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<li><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+								<li><a href="cart.php"><i class="icon-shopping-cart"></i> Cart</a></li>
 							</ul>
 						</div>
 					</div>
@@ -650,8 +662,6 @@
 						
 					</div>
 
-					
-            
 			</div>
 			<div class="copy">
 				<div class="row">
@@ -696,4 +706,3 @@
 
 	</body>
 </html>
-

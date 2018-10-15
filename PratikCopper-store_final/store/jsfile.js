@@ -28,8 +28,6 @@ $(document).ready(function(){
 		    });
               
 		});
-
-	
 	
     // Add active class to the current button (highlight it)
     var header = document.getElementById("size-wrap"); console.log("in the function man.. ");

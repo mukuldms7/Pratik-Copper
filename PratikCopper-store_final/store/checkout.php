@@ -1,3 +1,19 @@
+<?php
+include ('dbConfig.php');
+
+if (isset($_POST['count']))
+{
+    $x=$_POST['count'];
+    for($i=0;$i<$x;$i++)
+    {
+        $qty=$_POST['quantity'][$i]; $iid=$_POST['idno'][$i];
+        $validate = "UPDATE cart SET quantity = '$qty' WHERE id = '$iid'";
+        $result2 = mysqli_query($con,$validate);
+    }
+}
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -55,7 +71,7 @@
 	<![endif]-->
 
 	</head>
-	<body>
+	<body onload="myFunction()">
 		
 	<div class="colorlib-loader"></div>
 
@@ -65,11 +81,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="home.html"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
+							<div id="colorlib-logo"><a href="home.php"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="home.html">Home</a></li>
+								<li><a href="home.php">Home</a></li>
 								<li class="has-dropdown active">
 									<a href="shop.html">Shop</a>
 								<!--	<ul class="dropdown">
@@ -100,7 +116,7 @@
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Checkout</h1>
-				   					<h2 class="bread"><span><a href="home.html">Home</a></span> <span><a href="cart.html">Shopping Cart</a></span> <span>Checkout</span></h2>
+				   					<h2 class="bread"><span><a href="home.php">Home</a></span> <span><a href="cart.html">Shopping Cart</a></span> <span>Checkout</span></h2>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -131,90 +147,68 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-7">
-						<form method="post" class="colorlib-form">
+					<div class="col-md-8 col-md-offset-2">
+						<form method="post" class="colorlib-form" action="mail.php" name="formname">
 							<h2>Billing Details</h2>
 		              	<div class="row">
-			               <div class="col-md-12">
-			                  <div class="form-group">
-			                  	<label for="country">Select Country</label>
-			                     <div class="form-field">
-			                     	<i class="icon icon-arrow-down3"></i>
-			                        <select name="people" id="people" class="form-control">
-				                      	<option value="#">Select country</option>
-				                        <option value="#">Alaska</option>
-				                        <option value="#">China</option>
-				                        <option value="#">Japan</option>
-				                        <option value="#">Korea</option>
-				                        <option value="#">Philippines</option>
-			                        </select>
-			                     </div>
-			                  </div>
-			               </div>
 			               <div class="form-group">
 									<div class="col-md-6">
 										<label for="fname">First Name</label>
-										<input type="text" id="fname" class="form-control" placeholder="Your firstname">
+										<input type="text" name="fname" class="form-control" placeholder="Your firstname">
 									</div>
 									<div class="col-md-6">
 										<label for="lname">Last Name</label>
-										<input type="text" id="lname" class="form-control" placeholder="Your lastname">
+										<input type="text" name="lname" class="form-control" placeholder="Your lastname">
 									</div>
 								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<label for="companyname">Company Name</label>
-			                    	<input type="text" id="companyname" class="form-control" placeholder="Company Name">
-			                  </div>
-			               </div>
 			               <div class="col-md-12">
 									<div class="form-group">
 										<label for="fname">Address</label>
-			                    	<input type="text" id="address" class="form-control" placeholder="Enter Your Address">
+			                    	<input type="text" name="address1" class="form-control" placeholder="Enter Your Address">
 			                  </div>
 			                  <div class="form-group">
-			                    	<input type="text" id="address2" class="form-control" placeholder="Second Address">
+			                    	<input type="text" name="address2" class="form-control" placeholder="Second Address">
 			                  </div>
 			               </div>
 			               <div class="col-md-12">
 									<div class="form-group">
 										<label for="companyname">Town/City</label>
-			                    	<input type="text" id="towncity" class="form-control" placeholder="Town or City">
+			                    	<input type="text" name="towncity" class="form-control" placeholder="Town or City">
 			                  </div>
 			               </div>
 			               <div class="form-group">
 									<div class="col-md-6">
-										<label for="stateprovince">State/Province</label>
-										<input type="text" id="fname" class="form-control" placeholder="State Province">
+										<label for="stateprovince">State</label>
+										<input type="text" name="State" class="form-control" placeholder="State ">
 									</div>
 									<div class="col-md-6">
-										<label for="lname">Zip/Postal Code</label>
-										<input type="text" id="zippostalcode" class="form-control" placeholder="Zip / Postal">
+										<label for="lname">Postal Code</label>
+										<input type="text" name="postalcode" id="pin" class="form-control" placeholder=" Postal">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-md-6">
 										<label for="email">E-mail Address</label>
-										<input type="text" id="email" class="form-control" placeholder="State Province">
+										<input type="text" name="email" class="form-control" placeholder="State Province">
 									</div>
 									<div class="col-md-6">
 										<label for="Phone">Phone Number</label>
-										<input type="text" id="zippostalcode" class="form-control" placeholder="">
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="col-md-12">
-										<div class="radio">
-										  <label><input type="radio" name="optradio">Create an Account? </label>
-										  <label><input type="radio" name="optradio"> Ship to different address</label>
-										</div>
+										<input type="text" name="phone" class="form-control" placeholder=" Phone Number">
 									</div>
 								</div>
 		              </div>
+                            <div id="message1" >
+                              <h2> <center>   We have distributers in your state, Your order can be delivered in 10 days, We will contact you.</center></h2>
+                            </div> 
+                             <div id="message2">
+                             <h2>  <center>  No distributer is available in your state, We will contact you for delivery options. </center></h2>
+                            </div> 
+                            <p><center> <input type="submit" value="Place an order" class="btn btn-primary"></center></p>
 		            </form>
+                        
 					</div>
-					<div class="col-md-5">
-						<div class="cart-detail">
+					<div class="col-md-2">
+						<!--<div class="cart-detail">
 							<h2>Cart Total</h2>
 							<ul>
 								<li>
@@ -228,7 +222,7 @@
 								<li><span>Order Total</span> <span>$180.00</span></li>
 							</ul>
 						</div>
-						<div class="cart-detail">
+                            <div class="cart-detail">
 							<h2>Payment Method</h2>
 							<div class="form-group">
 								<div class="col-md-12">
@@ -262,7 +256,7 @@
 						<div class="row">
 							<div class="col-md-12">
 								<p><a href="order-complete.html" class="btn btn-primary">Place an order</a></p>
-							</div>
+							</div>-->
 						</div>
 					</div>
 				</div>
@@ -444,8 +438,6 @@
 						
 					</div>
 
-					
-            
 			</div>
 			<div class="copy">
 				<div class="row">
@@ -487,7 +479,57 @@
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-	</script>
+    <style>
+        #message1, #message2{display: none; }
+    </style>
+	<script>
+        
+        function postit(){
+        var input = document.getElementById("pin");
+            var pinned = document.getElementById("message1");
+             var unpinned = document.getElementById("message2");
+        
+           if( input.value.length == "6")
+           {
+               if(input.value > "200000" && input.value < "699999")
+                   {
+                       if(input.value[0] == "2" && input.value[1] == "9")
+                            upn();
+                       else if(input.value[0] == "3" && input.value[1] == "5")
+                            upn();
+                       else if(input.value[0] == "4" && input.value[1] == "9")
+                            upn();
+                       else pn();
+                   }
+               else upn();
+           } else nopn();
+        }
+        var myVar;
+        
+        function pn() {
+            var pinned = document.getElementById("message1");
+             var unpinned = document.getElementById("message2");
+            pinned.style.display="block";
+            unpinned.style.display="none";
+        }
+        function upn() { 
+            var pinned = document.getElementById("message1");
+             var unpinned = document.getElementById("message2");
+            pinned.style.display="none";
+            unpinned.style.display="block";
+        }
+         function nopn() { 
+            var pinned = document.getElementById("message1");
+             var unpinned = document.getElementById("message2");
+            pinned.style.display="none";
+            unpinned.style.display="none";
+        }
+        
+        function myFunction() {
+            myVar = setInterval(postit, 1000);
+        }
+        
+    </script>
 
 	</body>
 </html>

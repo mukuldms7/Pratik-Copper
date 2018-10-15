@@ -86,11 +86,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="home.html"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
+							<div id="colorlib-logo"><a href="home.php"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="home.html">Home</a></li>
+								<li><a href="home.php">Home</a></li>
 								<li class="has-dropdown active">
 									<a href="shop.html">Shop</a>
 									<!--<ul class="dropdown">
@@ -121,7 +121,7 @@
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Product Detail</h1>
-				   					<h2 class="bread"><span><a href="home.html">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Product Detail</span></h2>
+				   					<h2 class="bread"><span><a href="home.php">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Product Detail</span></h2>
 				   				</div>
 				   			</div>
 				   		</div> 
@@ -340,56 +340,7 @@
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
-	<script>
-		$(document).ready(function(){
-
-		var quantity=0;
-		   $('.quantity-right-plus').click(function(e){
-		        
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		       // quantitiy=quantity;
-		        // If is not undefined
-		            
-		            $('#quantity').val(quantity + 1);
-                  document.newform.qty.value = quantity+1;
-		    });
-
-		     $('.quantity-left-minus').click(function(e){
-		        // Stop acting like a button
-		        e.preventDefault();
-		        // Get the field name
-		        var quantity = parseInt($('#quantity').val());
-		            // Increment
-		            if(quantity>0){
-		            $('#quantity').val(quantity - 1);
-                        document.newform.qty.value = quantity-1;
-		            }
-                    else document.newform.qty.value = quantity;
-		    });
-              
-		});
-
-	
-	
-    // Add active class to the current button (highlight it)
-    var header = document.getElementById("size-wrap"); console.log("in the function man.. ");
-    var btns = header.getElementsByClassName("btnn"); console.log(btns.length);
-   
-    for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function() {
-            var current = header.getElementsByClassName("active"); 
-            if (current.length > 0) { 
-                current[0].className = current[0].className.replace(" active", "");
-            }
-            this.className += " active"; var btns1 = header.getElementsByClassName("btnn active");  console.log("active = "); console.log(btns1[0].textContent); 
-            document.newform.size.value = btns1[0].textContent;
-      });
-    }
-	</script>
+<script src="jsfile.js"></script>
 <script>
 function fx(y) {
     var x = document.getElementById("changeimg");

@@ -30,3 +30,14 @@
 		<script src="jsfile.js"></script>
 		
 <input type="hidden" name="img" value="">
+
+function towny(z) { 
+    if ($(window).width() < 960) {        
+        fx((z%3)+1);
+    }
+        setTimeout(function() {
+                towny(z+1);
+            }, 3000);
+    }
+    
+    towny(1);

@@ -49,6 +49,9 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+       <!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />-->
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -87,11 +90,11 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="home.html"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
+							<div id="colorlib-logo"><a href="home.php"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="home.html">Home</a></li>
+								<li><a href="home.php">Home</a></li>
 								<li class="has-dropdown active">
 									<a href="shop.html">Shop</a>
 									<!--<ul class="dropdown">
@@ -122,7 +125,7 @@
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Product Detail</h1>
-				   					<h2 class="bread"><span><a href="home.html">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Product Detail</span></h2>
+				   					<h2 class="bread"><span><a href="home.php">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Product Detail</span></h2>
 				   				</div>
 				   			</div>
 				   		</div> 
@@ -138,20 +141,20 @@
 					<div class="col-md-10 col-md-offset-1">
 						<div class="product-detail-wrap">
 							<div class="row">
-								<div class="col-md-5" style="width: 65%">
+								<div class="col-md-7" >
 									<div class="product-entry">
 										<div class="product-img" id = "changeimg" style="background-image: url(images/ah1.jpg);">
                                             
 											<p class="tag"><span class="sale">Sale</span></p>
 										</div>
 										<div class="thumb-nail">
-                                            <a href="#gap" class="thumb-img" style="background-image: url(images/ah1.jpg);" onclick="fx(1)"></a>
-                                            <a href="#gap" class="thumb-img" style="background-image: url(images/ah2.jpg);" onclick="fx(2)"></a>
-                                            <a href="#gap" class="thumb-img" style="background-image: url(images/ah3.jpg);" onclick="fx(3)"></a>
+                                            <div onclick="fx(1)" style="cursor:pointer;"><a href="" class="thumb-img" id="images1" style="background-image: url(images/ah1.jpg);" ></a></div>
+                                            <div onclick="fx(2)" style="cursor:pointer;"><a href="" class="thumb-img" id="images2" style="background-image: url(images/ah2.jpg);" ></a></div>
+                                            <div onclick="fx(3)" style="cursor:pointer;"><a href="" class="thumb-img" id="images3" style="background-image: url(images/ah3.jpg);" ></a></div>
 										</div>
 									</div>
 								</div>
-								<div class="col-md-7" style="width: 35%">
+								<div class="col-md-5" >
 									<div class="desc">
 										<h3>Apple Handa</h3>
 										
@@ -347,7 +350,7 @@
 						<p>
 							
 							<span class="block"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Pratik Copper | Developed & Maintained by <a href="https://vishwadhaa.com" target="_blank"><b>Vishwadhaa</b></a>
+&copy; 2018 All rights reserved | Pratik Copper | Developed & Maintained by <a href="https://vishwadhaa.com" target="_blank"><b>Vishwadhaa</b></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span> 
 						</p>
 					</div>
@@ -361,6 +364,7 @@
 	</div>
 	
 	<!-- jQuery -->
+        
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
 	<script src="js/jquery.easing.1.3.js"></script>
@@ -381,7 +385,39 @@
 	<script src="js/jquery.stellar.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+        <style>
+            .ui-loader-default{
+                display: none;
+            }
+            .b2ns{
+                 background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+                width: 100%;
+                height: 100%;
+            }
+             @media screen and (max-width : 1920px){
+          .mobile{
+          /*visibility:hidden; PC */
+              display:none;
+          }
+        }
+    
+        @media screen and (max-width : 906px){
+         .desk{
+          /*visibility:hidden;*/
+             display:none;
+          }
+         .mobile{
+          /*visibility:visible;*/
+             display: block;
+          }
+             
+        }
+        </style>
 	<script>
 		$(document).ready(function(){
 
@@ -425,16 +461,28 @@ function fx(y) {
     var x = document.getElementById("changeimg");
     if(y==1)
         {
-            x.style.backgroundImage ="url(images/ah1.jpg)";
+            x.style.backgroundImage ="url(images/ah1.jpg)";console.log("active = 1img ");
         }
     else if(y==2){
-        x.style.backgroundImage ="url(images/ah2.jpg)";
+        x.style.backgroundImage ="url(images/ah2.jpg)";console.log("active = 2img ");
     }
     else if(y==3){
-        x.style.backgroundImage ="url(images/ah3.jpg)";
+        x.style.backgroundImage ="url(images/ah3.jpg)";console.log("active = 3img ");
     }
+   
 }
-
+    function towny(z) { 
+    if ($(window).width() < 960) {        
+        fx((z%3)+1);
+    }
+        setTimeout(function() {
+                towny(z+1);
+            }, 3000);
+    }
+    
+    towny(1);
+   
+    
     // Add active class to the current button (highlight it)
     var header = document.getElementById("size-wrap"); console.log("in the function man.. ");
     var btns = header.getElementsByClassName("btnn"); console.log(btns.length);

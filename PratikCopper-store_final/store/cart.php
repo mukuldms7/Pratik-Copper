@@ -1,8 +1,17 @@
 <?php
 include ('dbConfig.php');
 
-           $validate = "SELECT * FROM cart   ";
-                    $result2 = mysqli_query($con,$validate);
+if (isset($_GET['del']))
+{
+    $x=$_GET['del'];
+    $validate = "DELETE FROM cart where id = '$x' ";
+    $result2 = mysqli_query($con,$validate);
+}
+
+$validate = "SELECT * FROM cart   ";
+$result2 = mysqli_query($con,$validate);
+$count=0;
+
                     
 ?>
 <!DOCTYPE HTML>
@@ -72,11 +81,11 @@ include ('dbConfig.php');
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-2">
-							<div id="colorlib-logo"><a href="home.html"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
+							<div id="colorlib-logo"><a href="home.php"><img src="images/logo.png" alt="Pratik Copper Logo"><!--Store--></a></div>
 						</div>
 						<div class="col-xs-10 text-right menu-1">
 							<ul>
-								<li><a href="home.html">Home</a></li>
+								<li><a href="home.php">Home</a></li>
 								<li class="has-dropdown active">
 									<a href="shop.html">Shop</a>
 								</li>
@@ -100,7 +109,7 @@ include ('dbConfig.php');
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Shopping Cart</h1>
-				   					<h2 class="bread"><span><a href="home.html">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Shopping Cart</span></h2>
+				   					<h2 class="bread"><span><a href="home.php">Home</a></span> <span><a href="shop.html">Product</a></span> <span>Shopping Cart</span></h2>
 				   				</div>
 				   			</div>
 				   		</div>
@@ -131,6 +140,7 @@ include ('dbConfig.php');
 					</div>
 				</div>
                 
+                 <form action="checkout.php" method="post">
 				<div class="row row-pb-md">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="product-name">
@@ -149,8 +159,9 @@ include ('dbConfig.php');
 								<span>Remove</span>
 							</div>
 						</div>
-                        <?php   foreach ($result2 as $row)
-                    {?>
+                       
+                        <?php foreach ($result2 as $row)
+                    { $count++;  ?>
 						<div class="product-cart">
 							<div class="one-forth">
 								<div class="product-img" style="background-image: url(<?php echo $row['image'];?>);">
@@ -162,7 +173,8 @@ include ('dbConfig.php');
 							
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<input type="text" id="quantity" name="quantity" class="form-control input-number text-center" value="<?php echo $row['quantity']; ?> " min="1" max="100">
+									<input type="text" id="quantity" name="quantity[]" class="form-control input-number text-center" value="<?php echo $row['quantity']; ?> " min="1" max="100">
+                                    <input type="hidden" id="idno" name="idno[]" value="<?php echo $row['id'];?>">
 								</div>
 							</div>
                             <div class="one-eight text-center">
@@ -172,16 +184,18 @@ include ('dbConfig.php');
                             </div>
 							<div class="one-eight text-center">
 								<div class="display-tc">
-									<a href="#" class="closed"></a>
+									<a href="cart.php?del=<?php echo $row['id'];?>" class="closed"></a>
 								</div>
 							</div>
 						</div>
-					</div>
+					 <?php }?>
+                    </div>
 				</div>
-                <?php }?>
+                <input type="hidden" id="count" name="count" value="<?php echo $count;?>">
                 <center> 
-               <a href="checkout.html">  <input type="submit" value="Confirm cart" class="btn btn-primary"> </a>
+               <a href="#">  <input type="submit" name="sub" value="Confirm cart" class="btn btn-primary"> </a>
                     </center>
+                </form>
 				<!--<div class="row">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="total-wrap">
