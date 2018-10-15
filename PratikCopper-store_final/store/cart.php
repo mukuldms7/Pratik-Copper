@@ -92,7 +92,7 @@ $count=0;
 								<!--<li><a href="blog.html">Blog</a></li>-->
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<li><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+								<li><a href="cart.php"><i class="icon-shopping-cart"></i> Cart </a></li>
 							</ul>
 						</div>
 					</div>
@@ -246,7 +246,7 @@ $count=0;
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20Tawali.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -265,7 +265,7 @@ $count=0;
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20WaterBottle.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -284,7 +284,7 @@ $count=0;
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20FlowerPot.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -303,7 +303,7 @@ $count=0;
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20Jar.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->

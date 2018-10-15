@@ -90,7 +90,7 @@ if (isset($_POST['count']))
 									<a href="shop.html">Shop</a>
 								<!--	<ul class="dropdown">
 										<li><a href="product-detail%20-%20AppleHanda.html">Product Detail</a></li>
-										<li><a href="cart.html">Shipping Cart</a></li>
+										<li><a href="cart.php">Shipping Cart</a></li>
 										<li><a href="checkout.html">Checkout</a></li>
 										<li><a href="order-complete.html">Order Complete</a></li>
 										<li><a href="add-to-wishlist.html">Wishlist</a></li>
@@ -99,7 +99,7 @@ if (isset($_POST['count']))
 								<!--<li><a href="blog.html">Blog</a></li>-->
 								<li><a href="about.html">About</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<li><a href="cart.html"><i class="icon-shopping-cart"></i> Cart [0]</a></li>
+								<li><a href="cart.php"><i class="icon-shopping-cart"></i> Cart </a></li>
 							</ul>
 						</div>
 					</div>
@@ -116,7 +116,7 @@ if (isset($_POST['count']))
 				   			<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
 				   				<div class="slider-text-inner text-center">
 				   					<h1>Checkout</h1>
-				   					<h2 class="bread"><span><a href="home.php">Home</a></span> <span><a href="cart.html">Shopping Cart</a></span> <span>Checkout</span></h2>
+				   					<h2 class="bread"><span><a href="home.php">Home</a></span> <span><a href="cart.php">Shopping Cart</a></span> <span>Checkout</span></h2>
 				   				</div>
 				   			</div>
 				   		</div>

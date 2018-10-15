@@ -86,7 +86,7 @@ if (!isset($_SESSION['num']))
 									<a href="shop.html">Shop</a>
 									<!--<ul class="dropdown">
 										<li><a href="product-detail%20-%20AppleHanda.html">Product Detail</a></li>
-										<li><a href="cart.html">Shipping Cart</a></li>
+										<li><a href="cart.php">Shipping Cart</a></li>
 										<li><a href="checkout.html">Checkout</a></li>
 										<li><a href="order-complete.html">Order Complete</a></li>
 										<li><a href="add-to-wishlist.html">Wishlist</a></li>
@@ -218,7 +218,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20Tawali.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -237,7 +237,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20WaterBottle.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -256,7 +256,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20FlowerPot.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -275,7 +275,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20Jar.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -336,7 +336,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="sale">Sale</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20AppleHanda.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -355,7 +355,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20KulfiMatka.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -374,7 +374,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20NavarangKalashi.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -393,7 +393,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20KaguHanda.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -412,7 +412,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20PuneKalshi.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -431,7 +431,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20MaMalta.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -450,7 +450,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20Pawali.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
@@ -469,7 +469,7 @@ if (!isset($_SESSION['num']))
 								<p class="tag"><span class="new">New</span></p>
 								<div class="cart">
 									<p>
-										<span class="addtocart"><a href="cart.html"><i class="icon-shopping-cart"></i></a></span> 
+										<span class="addtocart"><a href="cart.php"><i class="icon-shopping-cart"></i></a></span> 
 										<span><a href="product-detail%20-%20SangliLota.html"><i class="icon-eye"></i></a></span> 
 										<!--<span><a href="#"><i class="icon-heart3"></i></a></span>
 										<span><a href="add-to-wishlist.html"><i class="icon-bar-chart"></i></a></span>-->
